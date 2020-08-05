@@ -39,13 +39,13 @@ export default class ScanScreen extends React.Component{
 
         if(buttonState === "clicked" && hasCameraPermissions){
             return(
-                <BarCodeScanner onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}/>
+                <BarCodeScanner onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned} style={StyleSheet.absoluteFillObject}/>
             );
         } else if(buttonState === "normal"){
             return(
                 <View style={styles.container}>
                     <Text style={styles.displayText}>
-                        {hasCameraPermissions===true ? this.state.scannedData: "Request Camera Permission"}
+                        {hasCameraPermissions===true ? this.state.scannedData : "Request Camera Permission"}
                     </Text>
 
                     <TouchableOpacity 
